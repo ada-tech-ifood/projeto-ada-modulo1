@@ -1,0 +1,16 @@
+[
+    {
+        "img_url": "http...",
+        "food_name": "hamburguer smash",
+        "food_description": "hamburguer de carne...",
+        "food_price": 25.00,
+        "available": true
+    },
+    {
+        "img_url": "http...",
+        "food_name": "sanduiche rasengan",
+        "food_description": "sanduiche de frango...",
+        "food_price": 15.00,
+        "available": false
+    }
+]
