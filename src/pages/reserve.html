@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/styles.min.css" />
+    <title>Reserva</title>
+  </head>
+  <body>
+
+    <header></header>
+
+    <main>
+      <div class="container-reserve">
+        <div class="image-container">
+          <img src="../images/batata-reserve.webp" alt="Batat Frita" style="width: 100%;" />
+        </div>
+        <form action="" class="form-reserve">
+          <div class="title-reserve">
+            <h1>Faça sua Reserva</h1>
+          </div>
+
+          <ul>
+            <li class="input-reserve">
+              <!--CAMPO NOME-->
+              <label for="client_name" class="label-reserve">Nome:</label>
+              <input
+                type="text"
+                name="client_name"
+                id="client_name"
+                pattern=".{6,}"
+                required
+                oninvalid="this.setCustomValidity('Nome deve conter 6 ou mais caracteres')"
+              />
+              </li>
+
+              <li class="input-reserve">
+              <!--CAMPO E-MAIL-->
+              <label for="client_email" class="label-reserve">E-mail:</label>
+              <input type="email" id="client_email" name="client_email" />
+              </li>
+
+              <li class="input-reserve">
+              <!--CAMPO CELULAR  -->
+              <label for="client_phone" class="label-reserve">Celular:</label>
+              <input type="tel" id="client_phone" name="client_phone" required/>
+              </li>
+
+              <li class="input-reserve">
+                <!--CAMPO DIA DA RESERVA -->
+              <label for="date_reserve" class="label-reserve">Data:</label>
+              <input type="date" id="date_reserve" name="date_reserve" required/>
+              </li>
+
+              <li class="input-reserve">
+                <!--CAMPO HORARIO DA RESERVA  -->
+              <label for="time_reserve" class="label-reserve">Horário:</label>
+              <input type="time" id="time_reserve" name="time_reserve" min="12:00" max="23:00" required/>
+              </li>
+
+              <li class="input-reserve">
+                <!--CAMPO CONVIDADOS  -->
+              <label for="guests" class="label-reserve">Convidados:</label>
+              <select id="guests" name="guests" required>
+                    <option value="one_people">1 Convidado</option>
+                    <option value="two_people">2 Convidados</option>
+                    <option value="three_people">3 Convidados</option>
+                    <option value="four_people">4 Convidados</option>
+                    <option value="five_people">5 Convidados</option>
+                    <option value="more_people">Mais Pessoas</option>
+                </select>
+              </li>
+          </ul>
+          
+          <button type="submit" class="button-reserve">Confirmar</button>
+        </form>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <script src="../js/reserve.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
