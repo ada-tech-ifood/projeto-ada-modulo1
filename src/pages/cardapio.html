@@ -65,15 +65,15 @@
             document.getElementById(id).innerText = qty + 1;
         }
 
-        function fetchAndRenderMenu() {
+        function fetchAndRenderMenu() { // essa funçao busca a lista de comidas (cadastrada na api) e renderiza a lista de comidas cadastradas.
             const apiUrl = 'https://parseapi.back4app.com/classes/menu';
             const headers = {
-                'X-Parse-Application-Id': 'm4YkgcYnDUuV486nA7LyuK7BpE0Z4072JURTrgQR',
+                'X-Parse-Application-Id': 'm4YkgcYnDUuV486nA7LyuK7BpE0Z4072JURTrgQR', //chaves que o back4app deu para acessar a api.
                 'X-Parse-REST-API-Key': 'YoXbAgSt5C3NLFwLO8kFSnnzYLTQ0bXBC993qBzR'
             };
 
-            fetch(apiUrl, { headers })
-                .then(response => response.json())
+            fetch(apiUrl, { headers }) // esse fetch bate na api enviando informaçõs dos headers e recebendo a lista de comidas cadastradas (como o js bate na api).
+                .then(response => response.json()) //json é a resposta que o banco envia pra
                 .then(data => {
                     renderMenu(data);
                 })
@@ -82,13 +82,14 @@
                 });
         }
 
-        function renderMenu(data) {
+        function renderMenu(data) { // essa funçao renderiza a lista de comidas.
             renderSection(data, 'Lanches');
             renderSection(data, 'Sobremesas');
+            renderSection(data, 'Bebidas');
         }
 
-        function renderSection(data, category) {
-            const menuContainer = document.getElementById('menu');
+        function renderSection(data, category) { //essa função pega o html que a gente define pras categorias.
+            const menuContainer = document.getElementById('menu'); 
             const section = document.createElement('div');
             section.className = 'section';
             section.innerHTML = `
@@ -105,16 +106,15 @@
             const filteredItems = data.results.filter(food => food.category === category);
 
             filteredItems.forEach(item => {
-                const newItem = createMenuItem(item);
-                itemsContainer.appendChild(newItem);
+                const newItem = createMenuItem(item); // cria o html do card.
+                itemsContainer.appendChild(newItem); // adiciona o item na lista de itens.
             });
 
-            menuContainer.appendChild(section);
+            menuContainer.appendChild(section); // adiciona a section no menu.
         }
 
-        function createMenuItem(item) {
+        function createMenuItem(item) { 
             const newItem = document.createElement('div');
-            // newItem.id = item.objectId;
             newItem.className = 'col';
             newItem.innerHTML = `
             <div class="card container"> 
@@ -124,7 +124,14 @@
                     </div>
                     <div class="col-md-5">
                         <div class="card-body">
-                            <h5 class="card-title">${item.title}</h5>
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5 class="card-title">${item.title}</h5>
+                                </div>
+                                <div class="col">
+                                    <span class="badge bg-danger rounded-pill px-2 py-2"> ${item.tags} </span>
+                                </div>
+                            </div>
                             <p class="card-text">${item.description}</p>
                         </div>
                     </div>
@@ -198,6 +205,7 @@
             </div>
 
             <div id="menu"></div>
+            
 
 </body>
 
