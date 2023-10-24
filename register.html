@@ -10,68 +10,13 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <style>
-      body {
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-      }
-
-      h1 {
-        color: #000;
-      }
-
-      .container {
-        background-color: rgba(40, 44, 51, 0.8);
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        margin: 0 auto; /* Centralizar horizontalmente */
-        margin-top: 100px;
-        max-width: 400px; /* Limitar a largura do contêiner */
-      }
-
-      /* Substitua a cor primary pelo #A6F750 */
-      .btn-primary,
-      .btn-primary:hover,
-      .btn-primary:focus {
-        background-color: #a6f750;
-        border-color: #a6f750;
-        color: #000;
-      }
-
-      /* Substitua a cor primary do bootstrap */
-      a.btn-primary {
-        color: #000;
-      }
-      a.btn-primary:hover {
-        background-color: #206aff;
-        border-color: #fff;
-        color: #fff;
-      }
-      .btn-primary:hover {
-        background-color: #206aff;
-        border-color: #fff;
-        color: #fff;
-      }
-
-      /* Estilo para a mensagem de "Registro" */
-      .registro-message {
-        background-color: #a6f750;
-        color: #fff;
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 20px;
-      }
-    </style>
     <title>Página de Cadastro</title>
   </head>
   <body>
     <main>
-      <div class="container">
-        <div class="registro-message">
+      <div class="cart-container register-container">
+        <img src="/src/images/logo.png" alt="Logo" class="logo-image img-fluid" />
+        <div class="register-message">
           <h1>Registro</h1>
         </div>
         <form>
@@ -121,8 +66,12 @@
               />
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
-          <button type="reset" class="btn btn-primary">Limpar Dados</button>
+          <button type="submit" class="geekbyte btn btn-primary">
+            Cadastrar
+          </button>
+          <button type="reset" class="geekbyte btn btn-primary">
+            Limpar
+          </button>
         </form>
         <p>Já tem cadastro? <a href="login.index">Faça login aqui</a></p>
       </div>
