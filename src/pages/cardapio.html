@@ -22,6 +22,12 @@
             height: 100%;
             width: 100%;
             background: linear-gradient(90deg, rgba(166, 247, 80, 0.04) 0%, rgba(166, 247, 80, 0) 69.95%), rgb(24, 28, 35);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 5px 10px #a6f750;
         }
 
         .quantity-selection {
@@ -89,7 +95,7 @@
         }
 
         function renderSection(data, category) { //essa função pega o html que a gente define pras categorias.
-            const menuContainer = document.getElementById('menu'); 
+            const menuContainer = document.getElementById('menu');
             const section = document.createElement('div');
             section.className = 'section';
             section.innerHTML = `
@@ -113,19 +119,19 @@
             menuContainer.appendChild(section); // adiciona a section no menu.
         }
 
-        function createMenuItem(item) { 
+        function createMenuItem(item) {
             const newItem = document.createElement('div');
             newItem.className = 'col';
             newItem.innerHTML = `
             <div class="card container"> 
                 <div class="row justify-content-center align-items-center">
                     <div class="col-12 col-md-4 px-0">
-                        <img src="${item.image}" class="img-fluid" alt="...">
+                        <img src="${item.image}" class="img-fluid" alt="Imagem do item">
                     </div>
                     <div class="col-md-5">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-9">
+                                <div class="col-12 col-md-9">
                                     <h5 class="card-title">${item.title}</h5>
                                 </div>
                                 <div class="col">
@@ -173,39 +179,12 @@
 
         <div class="col">
             <div class="d-flex justify-content-between">
-                <img style="max-width: 200px;" src="../images/geek_byte.logo.png" alt="...">
-            </div>
-            <div class="row text-center bg-primary rounded py-3 my-3" style="color: black;">
-                <h1> <b>Cardápio</b></h1>
-            </div>
-            <div class="row">
-                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="../images/burguer-de-picanha.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../images/batata.jpeg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../images/trio hamburguer.jpg" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
+                <img style="max-width: 200px;" src="../images/geek_byte.logo.png"
+                    alt="Logo da loja contendo uma menina de headset segurando um hamburguer">
             </div>
 
             <div id="menu"></div>
-            
+
 
 </body>
 
