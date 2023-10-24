@@ -1,0 +1,98 @@
+@import '../variables/index.scss';
+
+.title-reserve{
+    color: $primary;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include typhography(big, 700, $primary);
+}
+
+form.form-reserve{
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 5px 5px 10px $primary; 
+    float: right;
+    background-color: $containerBackground;
+    width: fit-content;
+    @include typhography(small, 500, $text);
+ }
+
+.input-reserve input,select{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.label-reserve{
+    width: 80px;
+}
+
+.button-reserve{
+    background-color: $primary;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    @include typhography(medium, 700, $secondaryBackground);
+
+}
+
+.button-reserve:hover {
+    background-color: darken($primary, 10%);
+}
+
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    gap: 10px;
+
+}
+
+input.input-reserve {
+
+}
+
+label {
+    width: 200px;
+    text-align: right;
+}
+
+input:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+
+input:focus {
+    box-shadow: 0 0 5px 1px $primary;
+}
+
+.container-reserve {
+    display: flex;
+    justify-content: space-around; /* Isso distribuirá os elementos igualmente ao redor do contêiner */
+    align-items: center; /* Isso centralizará verticalmente os elementos dentro do contêiner */
+    height: 100vh;
+  }
+  
+  .image-container {
+    float: left;
+    width: 50%; /* Isso faz com que a imagem ocupe 50% do espaço disponível */
+  }
+
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
