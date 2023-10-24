@@ -13,9 +13,9 @@
 
     <style>
         .carousel-inner img {
-            width: 600px;
-            height: 400px;
-            object-fit: fill;
+            /* width: 600px;
+            height: 400px; */
+            object-fit: contain;
         }
 
         .card {
@@ -54,21 +54,15 @@
 
     <script>
         function decreaseQuantity(id) {
-            console.log('decrease', id)
-            const quantityElement = document.getElementById(id).querySelector('.quantity-value');
-            const quantity = parseInt(quantityElement.textContent);
-            if (quantity > 0) {
-                quantity--;
-                quantityElement.textContent = quantity;
+            qty = parseInt(document.getElementById(id).innerText);
+            if (qty > 0) {
+                document.getElementById(id).innerText = qty - 1;
             }
         }
 
         function increaseQuantity(id) {
-            console.log('increase', id)
-            const quantityElement = document.getElementById(id).querySelector('.quantity-value');
-            const quantity = parseInt(quantityElement.textContent);
-            quantity++;
-            document.querySelector('.quantity-value').textContent = quantity;
+            qty = parseInt(document.getElementById(id).innerText);
+            document.getElementById(id).innerText = qty + 1;
         }
 
         function fetchAndRenderMenu() {
@@ -101,8 +95,8 @@
             <div class="row text-center bg-primary rounded py-3 mt-5" style="color: black;">
                 <h1><b> ${category} </b></h1>
             </div>
-            <div class="row">
-                <div id="items" class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="row justify-content-center align-items-stretch">
+                <div id="items" class="row row-cols-1 g-4">
                 </div>
             </div>
         `;
@@ -120,29 +114,29 @@
 
         function createMenuItem(item) {
             const newItem = document.createElement('div');
-            newItem.id = item.objectId;
+            // newItem.id = item.objectId;
             newItem.className = 'col';
             newItem.innerHTML = `
             <div class="card container"> 
-                <div class="row align-items-center">
-                    <div class="col-md-4 px-0">
-                        <img src="${item.image}" class="img-fluid" alt="..." style="width: auto; height: 195px;">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-md-4 px-0">
+                        <img src="${item.image}" class="img-fluid" alt="...">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div class="card-body">
                             <h5 class="card-title">${item.title}</h5>
                             <p class="card-text">${item.description}</p>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <div class="row justify-content-evenly align-items-center">
-                            <p class="card-title" style="font-size: 24px;">R$ ${item.price}</p>
-                            <div class="quantity-selection">
-                                <button class="quantity-btn minus-btn" onclick="decreaseQuantity(${item.objectId})">
+                        <div class="row">
+                            <p class="card-title text-center" style="font-size: 24px;">R$ ${item.price.toFixed(2)}</p>
+                            <div id="${item.objectId}" class="quantity-selection py-2">
+                                <button class="quantity-btn minus-btn" onclick="decreaseQuantity('qty-${item.objectId}');">
                                     <i class="bi bi-dash"></i>
                                 </button>
-                                <span class="quantity-value">0</span>
-                                <button class="quantity-btn plus-btn" onclick="increaseQuantity(${item.objectId})">
+                                <span id="qty-${item.objectId}" class="quantity-value">0</span>
+                                <button class="quantity-btn plus-btn" onclick="increaseQuantity('qty-${item.objectId}');">
                                     <i class="bi bi-plus"></i>
                                 </button>
                             </div>
@@ -172,7 +166,7 @@
 
         <div class="col">
             <div class="d-flex justify-content-between">
-                <img style="max-width: 200px;" src="../images/geek_byte.logo.png" alt="Imagem" class="imagem">
+                <img style="max-width: 200px;" src="../images/geek_byte.logo.png" alt="...">
             </div>
             <div class="row text-center bg-primary rounded py-3 my-3" style="color: black;">
                 <h1> <b>Cardápio</b></h1>
