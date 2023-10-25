@@ -131,7 +131,7 @@
       };
 
       fetch(apiUrl, { headers }) // esse função bate na api enviando informaçõs dos headers e recebendo a lista de comidas cadastradas (como o js bate na api).
-        .then((response) => response.json()) 
+        .then((response) => response.json())
         .then((data) => {
           renderMenu(data);
         })
@@ -162,7 +162,7 @@
         `;
 
       const itemsContainer = section.querySelector("#items"); // cria a lista de itens.
-      const filteredItems = data.results.filter( 
+      const filteredItems = data.results.filter(
         (food) => food.category === category
       );
 
@@ -272,7 +272,7 @@
   </header>
 
   <!-- Menu -->
-  <div class="d-flex justify-content-center align-items-center"> 
+  <div class="d-flex justify-content-center align-items-center" style="margin-bottom: 40px;">
     <div class="container">
       <div class="col">
         <main id="menu">
