@@ -18,7 +18,7 @@
   .btn-primary.geekbyte:focus {
     background-color: $primary;
     border-color: $primary;
-    color: $primaryBackground;
+    color: $primaryBackground;    
   }
 
   a.btn-primary.geekbyte {
@@ -55,6 +55,7 @@
     .d-none-md {
       display: table-cell;
     }
+    
   }
 
   @media (max-width: 350px) {
@@ -65,7 +66,18 @@
         margin: auto !important;
         width: 100% !important;
         }  
-    }    
+        
+        a.btn.btn-primary.geekbyte {
+      width: 40% !important;
+    }
+
+    button.btn.btn-primary.geekbyte {
+      width: 40% !important;
+    }
+    
+    }
+
+    
   }
 
  
