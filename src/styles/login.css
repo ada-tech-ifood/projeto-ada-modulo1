@@ -4,8 +4,8 @@ body {
   }
 
 .form-signin {
-  background: linear-gradient(90deg, rgba(166, 247, 80, 0.04) 0%, rgba(166, 247, 80, 0) 69.95%), rgb(24, 28, 35);
-  box-shadow: 5px 5px 10px #a6f750;
+  box-shadow: 5px 5px 10px #a6f750;  
+  background-color: #282C33; padding: 20px;
 }
 
 .form-signin input[type="email"] {
