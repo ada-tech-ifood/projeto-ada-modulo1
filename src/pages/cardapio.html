@@ -92,16 +92,16 @@
         quantity: qty,
       };
 
-      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || []; //função para pegar info do carrinho
 
-      const itemExistente = carrinho.find(
+      const itemExistente = carrinho.find( //analisa se o item ja esta no carrinho
         (c) => c.objectId === item.objectId
       );
 
-      if (itemExistente) {
+      if (itemExistente) { //aumenta a quantidade do mesmo item no carrinho
         itemExistente.quantity += qty;
       } else {
-        carrinho.push(item);
+        carrinho.push(item); //se ainda não tem o item no carrinho, cria um item novo
       }
 
       localStorage.setItem("carrinho", JSON.stringify(carrinho))
@@ -130,8 +130,8 @@
         "X-Parse-REST-API-Key": "YoXbAgSt5C3NLFwLO8kFSnnzYLTQ0bXBC993qBzR",
       };
 
-      fetch(apiUrl, { headers }) // esse fetch bate na api enviando informaçõs dos headers e recebendo a lista de comidas cadastradas (como o js bate na api).
-        .then((response) => response.json()) //json é a resposta que o banco envia pra
+      fetch(apiUrl, { headers }) // esse função bate na api enviando informaçõs dos headers e recebendo a lista de comidas cadastradas (como o js bate na api).
+        .then((response) => response.json()) 
         .then((data) => {
           renderMenu(data);
         })
@@ -161,8 +161,8 @@
             </div>
         `;
 
-      const itemsContainer = section.querySelector("#items");
-      const filteredItems = data.results.filter(
+      const itemsContainer = section.querySelector("#items"); // cria a lista de itens.
+      const filteredItems = data.results.filter( 
         (food) => food.category === category
       );
 
@@ -181,8 +181,7 @@
             <div class="card container justify-content-center"> 
                 <div class="row justify-content-center align-items-center">
                     <div class="col-12 col-md-4 px-0">
-                        <img src="${item.image
-        }" class="img-fluid" alt="Imagem do item">
+                        <img src="${item.image}" class="img-fluid" alt="Imagem do item">
                     </div>
                     <div class="col-md-5">
                         <div class="card-body">
@@ -191,8 +190,7 @@
                                     <h5 class="card-title">${item.title}</h5>
                                 </div>
                                 <div class="col">
-                                    <span class="badge bg-danger rounded-pill px-2 py-2"> ${item.tags
-        } </span>
+                                    <span class="badge bg-danger rounded-pill px-2 py-2"> ${item.tags} </span>
                                 </div>
                             </div>
                             <p class="card-text">${item.description}</p>
@@ -200,25 +198,17 @@
                     </div>
                     <div class="col-md-2">
                         <div class="row">
-                            <p class="card-title text-center" style="font-size: 16px;">R$ ${item.price.toFixed(
-          2
-        )}</p>
-                            <div id="${item.objectId
-        }" class="quantity-selection py-2">
-                                <button class="quantity-btn minus-btn" onclick="decreaseQuantity('qty-${item.objectId
-        }');">
+                            <p class="card-title text-center" style="font-size: 16px;">R$ ${item.price.toFixed(2)}</p>
+                            <div id="${item.objectId}" class="quantity-selection py-2">
+                                <button class="quantity-btn minus-btn" onclick="decreaseQuantity('qty-${item.objectId}');">
                                     <i class="bi bi-dash"></i>
                                 </button>
-                                <span id="qty-${item.objectId
-        }" class="quantity-value">0</span>
-                                <button class="quantity-btn plus-btn" onclick="increaseQuantity('qty-${item.objectId
-        }');">
+                                <span id="qty-${item.objectId}" class="quantity-value">0</span>
+                                <button class="quantity-btn plus-btn" onclick="increaseQuantity('qty-${item.objectId}');">
                                     <i class="bi bi-plus"></i>
                                 </button>
                             </div>
-                            <button class="btn btn-primary" onclick="adicionarAoCarrinho('${item.objectId
-        }', '${item.title}', '${item.image}', '${item.price
-        }', 'qty-${item.objectId}')">
+                            <button class="btn btn-primary" onclick="adicionarAoCarrinho('${item.objectId}', '${item.title}', '${item.image}', '${item.price}', 'qty-${item.objectId}')">
                                 <i class="bi bi-cart-plus"> Adicionar</i>
                             </button>
                         </div>
@@ -281,10 +271,12 @@
     </div>
   </header>
 
-  <div class="d-flex justify-content-center align-items-center">
+  <!-- Menu -->
+  <div class="d-flex justify-content-center align-items-center"> 
     <div class="container">
       <div class="col">
-        <main id="menu"></main>
+        <main id="menu">
+        </main>
       </div>
     </div>
   </div>
