@@ -31,12 +31,6 @@
         crossorigin="anonymous"></script>
 
     <style>
-        .carousel-inner img {
-            /* width: 600px;
-            height: 400px; */
-            object-fit: contain;
-        }
-
         .card {
             height: 100%;
             width: 100%;
@@ -78,6 +72,39 @@
     </style>
 
     <script>
+
+        function adicionarAoCarrinho(objectId, title, image, price, qty_id) {
+
+            const qty = parseInt(document.getElementById(qty_id).innerText)
+
+            if (qty == 0) {
+                alert("Selecione no mínimo 1 item!");
+                return
+            }
+
+            const item = {
+                objectId: objectId,
+                title: title,
+                image: image,
+                price: parseFloat(price),
+                quantity: qty
+            };
+
+            let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+            const itemExistente = carrinho.find((c) => c.objectId === item.objectId);
+
+            if (itemExistente) {
+                itemExistente.quantity += qty;
+            } else {
+                carrinho.push(item);
+            }
+
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+            alert("Item adicionado ao carrinho com sucesso!");
+        }
+
         function decreaseQuantity(id) {
             qty = parseInt(document.getElementById(id).innerText);
             if (qty > 0) {
@@ -171,7 +198,7 @@
                                     <i class="bi bi-plus"></i>
                                 </button>
                             </div>
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" onclick="adicionarAoCarrinho('${item.objectId}', '${item.title}', '${item.image}', '${item.price}', 'qty-${item.objectId}')">
                                 <i class="bi bi-cart-plus"> Adicionar</i>
                             </button>
                         </div>
