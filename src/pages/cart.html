@@ -101,6 +101,7 @@
             <th scope="col" class="d-none d-sm-table-cell">Preço</th>
             <th scope="col" class="d-none d-sm-table-cell">Quantidade</th>
             <th scope="col">Total</th>
+            <th scope="col">Remover</th>
           </tr>
         </thead>
         <tbody>
@@ -172,9 +173,7 @@
       <div class="mb-3">
         <h3 id="cart-total">Total: R$ 77.96</h3>
       </div>
-      <a href="payment.html"><button  type="submit" class="geekbyte btn btn-primary">
-        Finalizar
-      </button></a>
+      <a href="payment.html" class="geekbyte btn btn-primary">Finalizar</a>
       <a href="cardapio.html" class="geekbyte btn btn-primary">Continuar</a>
     </div>
   </main>
@@ -268,37 +267,52 @@
   </footer>
   <script src="../../dist/script.min.js"></script>
   <script>
+  if (localStorage.getItem('carrinho')) {
+    var carrinhoString = localStorage.getItem('carrinho');
+    var carrinho = JSON.parse(carrinhoString);
 
-    if (localStorage.getItem('carrinho')) {
-      var carrinhoString = localStorage.getItem('carrinho');
-      var carrinho = JSON.parse(carrinhoString);
+    var tabela = document.querySelector('tbody');
+    tabela.innerHTML = '';
 
-      var tabela = document.querySelector('tbody');
-      tabela.innerHTML = '';
+    var total = 0;
 
-      var total = 0;
+    carrinho.forEach(function (produto, index) {
+      var subtotal = produto.price * produto.quantity;
+      total += subtotal;
 
-      carrinho.forEach(function (produto, index) {
-        var subtotal = produto.price * produto.quantity;
-        total += subtotal;
+      var linha = document.createElement('tr');
+      linha.innerHTML = `
+        <th scope="row" class="d-none d-sm-table-cell">${index + 1}</th>
+        <td>${produto.title}</td>
+        <td>
+          <img src="${produto.image}" alt="${produto.title}" class="produto-image img-fluid" />
+        </td>
+        <td class="d-none d-sm-table-cell">${produto.price.toFixed(2)}</td>
+        <td class="d-none d-sm-table-cell">${produto.quantity}</td>
+        <td>${subtotal.toFixed(2)}</td>
+        <td><button onclick="removerItem(${index})" class="btn btn-danger">-</button></td>
+      `;
 
-        var linha = document.createElement('tr');
-        linha.innerHTML = `
-      <th scope="row" class="d-none d-sm-table-cell">${index + 1}</th>
-      <td>${produto.title}</td>
-      <td>
-        <img src="${produto.image}" alt="${produto.title}" class="produto-image img-fluid" />
-      </td>
-      <td class="d-none d-sm-table-cell">${produto.price.toFixed(2)}</td>
-      <td class="d-none d-sm-table-cell">${produto.quantity}</td>
-      <td>${subtotal.toFixed(2)}</td>
-    `;
+      tabela.appendChild(linha);
+    });
 
-        tabela.appendChild(linha);
-      });
+    document.getElementById('cart-total').innerText = 'Total: R$ ' + total.toFixed(2);
+}
 
-      document.getElementById('cart-total').innerText = 'Total: R$ ' + total.toFixed(2);
+function removerItem(index) {
+  if (localStorage.getItem('carrinho')) {
+    var carrinhoString = localStorage.getItem('carrinho');
+    var carrinho = JSON.parse(carrinhoString);
+    if (carrinho[index].quantity > 1) {
+      carrinho[index].quantity -= 1;
+    } else {
+      carrinho.splice(index, 1);
     }
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    location.reload();
+    console.log(`Item "${carrinho[index].title}" modificado no carrinho.`);
+  }
+}
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
