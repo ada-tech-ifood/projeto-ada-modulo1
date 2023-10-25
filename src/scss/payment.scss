@@ -17,6 +17,8 @@
 
 }
 
+//ORDER PAYMENT 
+
 .order-payment {
   width: 300px;
   float: left;
@@ -50,6 +52,9 @@ ul.list-payment li > img {
 
 ul.list-payment li > h4 {
   @include typhography(small, 400, $text);
+  width: 50%;
+  display: flex;
+  justify-content: left;
 }
 
 ul.list-payment li > h5 {
@@ -78,9 +83,7 @@ h1.total-payment {
   @include typhography(big, 700, $primary);
 }
 
-/*--------------------
-Payment
----------------------*/
+//PAYMENT
 
 .payment {
   z-index: 0;
@@ -238,9 +241,8 @@ button:focus {
   right: 0;
 }
 
-/*--------------------
-  Credit Card Background
-  ---------------------*/
+//CARD BACKGROUND
+
 
 .wave {
   height: 300px;
