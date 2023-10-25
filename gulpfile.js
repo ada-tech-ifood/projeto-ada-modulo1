@@ -24,4 +24,9 @@ gulp.task('watch', () => {
   gulp.watch('src/js/**/*.js', gulp.series('scripts'));
 });
 
-gulp.task('default', gulp.parallel('styles', 'scripts', 'watch'));
+gulp.task('build', () => {
+  return gulp.src('src/**/*.html') // Update the source path to match your HTML files
+    .pipe(gulp.dest('dist')); // Copy HTML files to 'dist' directory
+});
+
+gulp.task('default', gulp.parallel('styles', 'scripts', 'watch', 'build'));
