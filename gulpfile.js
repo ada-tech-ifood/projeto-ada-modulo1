@@ -25,7 +25,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('build', () => {
-  return gulp.src('src/**/*.html') // Update the source path to match your HTML files
+  return gulp.src('src/**') // Update the source path to match your HTML files
     .pipe(gulp.dest('dist')); // Copy HTML files to 'dist' directory
 });
 
