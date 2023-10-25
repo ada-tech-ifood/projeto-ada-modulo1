@@ -1,28 +1,32 @@
 @import '../variables/index.scss'; 
-
-  .register-message {
-    background-color: $primary;
-    color: #fff;
-    border-radius: 5px;
-    width: auto;
-  }
-
-  .logo-image {
-    width: 150px;
-    height: 150px;
-  }
-
-  .container.register-container {
-    width: 50%;
-  }
-
-  @media (max-width: 350px) {
-    .register-container{
-        h1, h2, h3, p, a, label, input, button, tr, th, td {
-        font-size: 8px !important;
-        padding: auto !important;
-        margin: auto !important;
-        width: 100% !important;
-        }  
-    }    
+  .register-page {
+    .register-message {
+      background-color: $primary;
+      color: #fff;
+      border-radius: 5px;
+      width: auto;
+    }
+  
+    .logo-image {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .container-register {
+      width: 50%;
+    }
+  
+    @media (max-width: 350px) {
+      .register-container{
+          h1, h2, h3, p, a, label, input, button, tr, th, td {
+          font-size: 8px;
+          padding: auto;
+          margin: auto;
+          width: 100%;
+          }  
+      }
+      label{
+        display: none;
+      }    
+    }
   }
