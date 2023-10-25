@@ -92,24 +92,25 @@
     <main>
         <div class="container-payment">
             <div class="order-payment">
+                <!--LISTA DE ITENS E VALOR TOTAL  -->
                 <h2>Finalizar Compra</h2>
                 <h5>Pedido #1000</h5>
                 <ul class="list-payment">
-                    <li><img src='../images/hamburguer.jpg'><h4>Hambúrguer de Frango</h4><h5>R$ 25.98</li>
-                    <li><img src='../images/batata.jpeg'><h4>Batata Frita com Cheddar</h4><h5>R$ 19.98</li></li>
-                    <li><img src='../images/burguer-de-picanha.jpg'><h4>Hambúrguer de Picanha</h4><h5>R$ 39.98</li></li>
+                  <li><img src='../images/coca-cola-garrafa.png'><h4>Bebida 2L</h4><h5>R$ 20.00</li>
+                    <!-- <li><img src='../images/batata.webp'><h4>Batatugi-Oh!</h4><h5>R$ 10.00</li></li> -->
+                    <li><img src='../images/hamburguer-frango.png'><h4>Hambúrguer Shinobi</h4><h5>R$ 175.00</li></li>
                 </ul>
                 <hr>
-                <h5 class='total-payment'>Entrega</h5><h4 class='total-payment'>R$ 10.00</h4>
+                <h5 class='total-payment'>Entrega</h5><h4 class='total-payment'>R$ 5.00</h4>
                 <hr>
-                <h5 class='total-payment'>Total</h5><h1 class='total-payment'>R$ 95.94</h1>
+                <h5 class='total-payment'>Total</h5><h1 class='total-payment'>R$ 200.00</h1>
             </div>
-            
+            <!--AREA DE DADOS  DO CARTÃO  -->
             <div id='payment' class='payment'>
                 <h2>Pagamento</h2>
                 <div class='card-payment'>
                   <div class='card-content'>
-                    <img id="logo-card" src="../images/batata-reserve.webp" alt="Logo GeekByte">
+                    <img id="logo-card" src="../images/logo.png" alt="Logo GeekByte">
                     <h5>N° do Cartão</h5>
                     <h6 id='label-cardnumber'>0000 0000 0000 0000</h6>
                     <h5>Expiração<span>CVC</span></h5>
@@ -118,6 +119,7 @@
                   <div class='wave'></div>
                 </div>
                 <div class='card-form'>
+                  <!--CAMPO NUMERO DO CARTAO -->
                     <p class='field'>
                     <svg id='i-cardfront' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 28 28;" xml:space="preserve" width="28px" height="28px"><g>
                       <path d="M471.5,88h-432C17.72,88,0,105.72,0,127.5v256C0,405.28,17.72,423,39.5,423h432c21.78,0,39.5-17.72,39.5-39.5v-256   C511,105.72,493.28,88,471.5,88z M496,383.5c0,13.509-10.991,24.5-24.5,24.5h-432C25.991,408,15,397.009,15,383.5v-256   c0-13.509,10.991-24.5,24.5-24.5h432c13.509,0,24.5,10.991,24.5,24.5V383.5z" fill="#dddfe6"/>
@@ -145,6 +147,7 @@
                     </svg>
                     <input type='text' id='cardnumber' name='cardnumber' placeholder='1234 5678 9123 4567' pattern='\d*' title='Número do Cartão' />
                   </p>
+                  <!--CAMPO EXPIRAÇÃO  -->
                     <p class='field space'>
                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="i-calendar" x="0px" y="0px" viewBox="0 0 191.259 191.259" style="enable-background:new 0 0 191.259 191.259;" xml:space="preserve" width="28px" height="28px">
                       <g>
@@ -174,6 +177,7 @@
                       </svg>
                       <input type='text' id='cardexpiration' name='cardexpiration' placeholder="MM / YYYY" pattern="\d*" title='Data de Expiração do Cartão' />
                   </p>
+                  <!--CAMPO CVC  -->
                     <p class='field'>
                       <svg id='i-cardback' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 28 28;" xml:space="preserve" width="28px" height="28px">
                       <g>
