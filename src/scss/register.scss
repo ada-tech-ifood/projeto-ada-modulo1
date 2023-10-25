@@ -15,6 +15,10 @@
     .container-register {
       width: 50%;
     }
+
+    input {
+      border: 2px solid #fff; 
+    }
   
     @media (max-width: 350px) {
       .register-container{
