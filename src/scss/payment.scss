@@ -5,44 +5,45 @@
   box-sizing: border-box;
 }
 
-.container-payment {
+div.container-payment {
   height: auto;
-  border-radius: 10px;
+  border-radius: 6px;
   box-shadow: 5px 5px 10px $primary;
-  background-color: $containerBackground;
+  background-color: $primaryBackground;
   width: fit-content;
   display: flex;
   justify-content: center;
   margin: 100px auto;
+  padding: 0;
 
 }
+
 
 //ORDER PAYMENT 
 
 .order-payment {
-  width: 300px;
   float: left;
   z-index: 1;
-  border-bottom-left-radius: 6px;   
-  padding: 10px;
+  border-bottom-left-radius: 6px;
+  padding: 20px;
 }
 
-.order-payment h2 {
-  @include typhography(medium, 700, $text);
+.order-payment>h2 {
+  @include typhography(medium, 700, $primaryBackground);
   width: auto;
   text-align: center;
 }
 
-.order-payment > h5 {
+.order-payment>h5 {
   @include typhography(small, 300, $text);
   text-align: left;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 5px;
+  margin: 15px 0;
   padding: 10px;
 }
 
-ul.list-payment li > img {
+ul.list-payment li>img {
   @include typhography(small, 400, $text);
   width: 60px;
   height: 60px;
@@ -50,18 +51,18 @@ ul.list-payment li > img {
   margin-bottom: 5px;
 }
 
-ul.list-payment li > h4 {
+ul.list-payment li>h4 {
   @include typhography(small, 400, $text);
   width: 50%;
   display: flex;
   justify-content: left;
 }
 
-ul.list-payment li > h5 {
+ul.list-payment li>h5 {
   @include typhography(small, 600, $text);
   width: 50%;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -86,19 +87,17 @@ h1.total-payment {
 //PAYMENT
 
 .payment {
-  z-index: 0;
-  width: 370px;
-  height: max-content;
   position: relative;
+  width: 350px;
   float: right;
-  background-color: $primaryBackground;
-  border-top-right-radius: 6px;
+  background-color: $containerBackground;
+  padding: 20px;
   border-bottom-right-radius: 6px;
-  padding: 10px 10px 30px 10px;
+  border-top-right-radius: 6px;
 }
 
 .payment h2 {
-  @include typhography(medium, 700, $primary);
+  @include typhography(medium, 700, $primaryBackground);
   width: auto;
   text-align: center;
 }
@@ -107,11 +106,10 @@ h1.total-payment {
   width: 300px;
   height: 178px;
   position: relative;
-  margin: 20px auto;
+  margin: 30px auto;
   overflow: hidden;
   z-index: 1;
   border-radius: 6px;
-  box-shadow: 0 15px 24px rgba(37, 44, 65, 0.32);
 }
 
 .card-content {
@@ -124,11 +122,11 @@ h1.total-payment {
   letter-spacing: 1px;
 }
 
-.card-content h5 > span {
+.card-content h5>span {
   margin-left: 87px;
 }
 
-.card-content h6 > span {
+.card-content h6>span {
   margin-left: 87px;
 }
 
@@ -146,40 +144,21 @@ h1.total-payment {
   padding: 15px 35px;
 }
 
-.card-form > p.field {
+.card-form>p.field {
   padding: 2px 5px;
-  background-color: #f4f5f9;
-  border-radius: 6px;
+  border-radius: 5px;
   margin-bottom: 10px;
   width: 100%;
 }
 
-input[type="text"] {
-  height: 32px;
-  background-color: transparent;
-  border: none;
-  color: #000;
-  font-family: "PT Mono";
-  font-size: 18px;
-  font-weight: 400;
-  z-index: 0;
-}
-
-input[type="text"]:focus {
-  outline: none;
-}
-
-::-webkit-input-placeholder {
-  color: #dddfe6;
-}
-:-moz-placeholder {
-  color: #dddfe6;
-}
-::-moz-placeholder {
-  color: #dddfe6;
-}
-:-ms-input-placeholder {
-  color: #dddfe6;
+input.input-payment {
+  @include typhography(small, 400, $text);
+  border-radius: 5px;
+  border: 1px solid $text;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: $primaryBackground;
+  color: $text;
 }
 
 .space {
@@ -191,15 +170,16 @@ button:focus {
 }
 
 .button-payment {
-  @include typhography(medium, 700, $primaryBackground);
+  @include typhography(normal, 600, $primaryBackground);
   width: 100%;
-  height: 65px;
   float: right;
   right: 0px;
   padding: 10px 20px;
   background-color: $primary;
   border-radius: 6px;
-  margin-top: 30px;
+  margin-top: 30px auto;
+  border: 1px solid $primary;
+  transition: background-color 0.3s ease;
 
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -209,7 +189,8 @@ button:focus {
 }
 
 .button-payment:hover {
-  background: darken($primary, 10%);
+  @include typhography(normal, 600, $primary);
+  background-color: $primaryBackground;
 }
 
 .button-payment span {
@@ -225,7 +206,7 @@ button:focus {
 
 .button-payment span:after {
   content: "→";
-  color: $primaryBackground;
+  color: $primary;
   position: absolute;
   opacity: 0;
   top: 0;
@@ -244,45 +225,56 @@ button:focus {
 //CARD BACKGROUND
 
 
-.wave {
-  height: 300px;
+.card-bg {
+  height: 200px;
   width: 300px;
   position: relative;
-  background: #3ca55c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #b5ac49,
-    #3ca55c
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #b5ac49,
-    #3ca55c
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #3ca55c;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #b5ac49,
+      #3ca55c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #b5ac49,
+      #3ca55c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   z-index: -1;
 }
 
 @media (max-width: 800px) {
-  .container-payment{
-      p, a, label, input, tr, th, td {
+  .container-payment {
+
+    p,
+    a,
+    label,
+    input,
+    tr,
+    th,
+    td {
       font-size: 15px;
       padding: auto;
-      margin: auto;
+      margin: 10px auto;
       width: 100%;
 
-      } 
-    flex-direction: column; 
+    }
+
+    flex-direction: column;
     max-width: calc(100% - 20px);
     margin: 40px auto;
     position: relative;
-    #payment{
+
+    #payment {
       max-width: 100%;
     }
   }
-  label{
+
+  label {
     display: none;
-  }  
+  }
+
+
 
 
 }
