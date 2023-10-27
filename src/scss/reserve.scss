@@ -1,40 +1,89 @@
 @import '../variables/index.scss';
 
-.title-reserve{
+.container-reserve {
+    display: flex;
+    justify-content: space-around;
+    /* Isso distribuirá os elementos igualmente ao redor do contêiner */
+    align-items: center;
+    /* Isso centralizará verticalmente os elementos dentro do contêiner */
+    height: 100vh;
+}
+
+.image-container { /* Isso faz com que a imagem ocupe 50% do espaço disponível */
+    float: left;
+    width: 50%;
+}
+
+.image-container >img {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.title-reserve2{
+    @include typhography(big, 700, $primary);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-reserve {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px $primary;
+    float: right;
+    background-color: $containerBackground;
+    @include typhography(small, 500, $text);
+}
+
+.form-reserve>form {
+    width: 250px;
+}
+
+.img-form-reserve {
+    width: 120px;
+    height: 120px;
+}
+
+.title-reserve {
     color: $primary;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    @include typhography(big, 700, $primary);
+    @include typhography(normal, 400, $primaryBackground);
 }
 
-form.form-reserve{
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 5px 5px 10px $primary; 
-    float: right;
-    background-color: $containerBackground;
-    width: fit-content;
-    @include typhography(small, 500, $text);
- }
-
-.input-reserve input,select{
+.input-reserve input,
+select {
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid $text;
     outline: none;
     margin-bottom: 10px;
     padding: 5px;
+    width: 100%;
+    background-color: $primaryBackground;
+    color: $text;
 }
 
-.label-reserve{
-    width: 80px;
+
+.label-reserve {
+    width: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
-.button-reserve{
+.button-reserve {
     background-color: $primary;
     padding: 5px 20px;
-    border: none;
+    border:1px solid $primary;
     border-radius: 5px;
     transition: background-color 0.3s ease;
     display: flex;
@@ -42,12 +91,13 @@ form.form-reserve{
     margin-top: 20px;
     justify-content: center;
     align-items: center;
-    @include typhography(medium, 700, $secondaryBackground);
+    @include typhography(normal, 400, $primaryBackground);
 
 }
 
 .button-reserve:hover {
-    background-color: darken($primary, 10%);
+    @include typhography(normal, 400, $primary);
+    background-color: $secondaryBackground;
 }
 
 
@@ -61,38 +111,33 @@ li {
 
 }
 
-input.input-reserve {
-    background-color: $primaryBackground;
-}
-
 label {
+    @include typhography(small, 400, $text);
     width: 200px;
     text-align: right;
-}
 
-input:invalid {
-    box-shadow: 0 0 5px 1px red;
 }
 
 input:focus {
     box-shadow: 0 0 5px 1px $primary;
 }
 
-.container-reserve {
-    display: flex;
-    justify-content: space-around; /* Isso distribuirá os elementos igualmente ao redor do contêiner */
-    align-items: center; /* Isso centralizará verticalmente os elementos dentro do contêiner */
-    height: 100vh;
-  }
-  
-  .image-container {
-    float: left;
-    width: 50%; /* Isso faz com que a imagem ocupe 50% do espaço disponível */
-  }
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.8) brightness(100%) sepia(100%) saturate(100%) hue-rotate(50deg); ///Isso muda a cor dos icones do input
+}
 
-  .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.8) brightness(100%) sepia(100%) saturate(100%) hue-rotate(50deg); ///Isso muda a cor dos icones do input
+}
+
+
+//Dispositivos menores a partir de 
+@media (max-width: 800px) {
+    .image-container {
+        display: none;
+    }
+
+
+}
