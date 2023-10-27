@@ -1,6 +1,13 @@
 # Projeto Front-End - Grupo I <a href="https://ada.tech/sou-aluno/programas/ifood-vem-ser-tech">(ADA - VEM SER TECH)</a>
 Front-End estático, catálogo digital responsivo.
 
+## Link para o Site
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5f1ed232-fe3c-4d60-b745-c775b5d0625a/deploy-status)](https://app.netlify.com/sites/lively-caramel-c64b28/deploys)
+
+O site está hospedado no netlify e o CI/CD configurado para sempre que tiver mudanças na main realizar o deploy.
+
+[https://lively-caramel-c64b28.netlify.app/](https://lively-caramel-c64b28.netlify.app/)
+
 ## Descrição
 - Catálago digital tem que ser responsivo (Pode utilizar bootstrap);
 - Mínimo de 4 páginas (Login, Home, Recuperar Senha, carrinho...);
