@@ -1,11 +1,6 @@
 @import '../variables/index.scss';  
 
-body {
-    background-color: #333;
-    color: #fff !important;
-  }
-
-  h1 {
+  h1.cart-h1 {
     color: $primaryBackground;
   }
 
@@ -14,8 +9,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    margin: 0 auto;
-    margin-top: 50px;
+    margin: 20px auto 50px auto;
+    box-shadow: 5px 5px 10px $primary;
   }
 
   .btn-primary.geekbyte,
@@ -23,7 +18,7 @@ body {
   .btn-primary.geekbyte:focus {
     background-color: $primary;
     border-color: $primary;
-    color: $primaryBackground;
+    color: $primaryBackground;    
   }
 
   a.btn-primary.geekbyte {
@@ -54,12 +49,13 @@ body {
 
   .d-none-md {
     display: none;
-  }
+  }  
 
   @media (max-width: 540px) {
     .d-none-md {
       display: table-cell;
     }
+    
   }
 
   @media (max-width: 350px) {
@@ -70,7 +66,18 @@ body {
         margin: auto !important;
         width: 100% !important;
         }  
-    }    
+        
+        a.btn.btn-primary.geekbyte {
+      width: 40% !important;
+    }
+
+    button.btn.btn-primary.geekbyte {
+      width: 40% !important;
+    }
+    
+    }
+
+    
   }
 
  

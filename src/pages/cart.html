@@ -1,65 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta name="keywords" content="geek, food, ada, ifood" />
-    <meta name="author" content="Bianca, Juliana, Nayra, Patrick" />
-    <meta http-equiv="Content-Language" content="pt-BR" />
-    <meta property="og:title" content="Geek Byte" />
-    <meta
-      property="og:description"
-      content="Geek Byte a lanchonete do geek!!" />
-    <meta property="og:url" content="www.geekbyte.com.br" />
-    <meta property="og:phone_number" content="(11) 2609-3807" />
-    <meta property="og:street-address" content=" Av. Brig. Faria Lima, 1306" />
-    <meta property="og:locality" content="Pinheiros" />
-    <meta property="og:region" content="SP" />
-    <meta property="og:email" content="ada@adatechbyifood.com.br" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://www.geekbyte.com.br/dist/img/logo.webp" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../dist/styles.min.css" />
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    <title>Reserva</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="header-container">
-        <div class="header-logo">
-          <img
-            src="../../dist/img/logo.png"
-            alt="Logo da Loja"
-            width="200px"
-            height="80px" /><span>GeekByte</span>
-        </div>
-        <nav class="header-navbar">
-          <a class="nav-item" href="index.html">
-            <div class="blur"></div>
-            Home
-          </a>
-          <a class="nav-item" href="cardapio.html">
-            <div class="blur"></div>
-            Cardápio
-          </a>
-          <a class="nav-item" href="reserve.html">
-            <div class="blur"></div>
-            Reserva
-          </a>
-        </nav>
-        <a class="header-cart" href="cart.html">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            class="bi bi-cart"
-            viewBox="0 0 16 16"
-            alt="minicart">
-            <path
-              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" /></svg>Carrinho
+<html lang="en">
+
+<head>
+  <meta name="keywords" content="geek, food, ada, ifood">
+  <meta name="author" content="Bianca, Juliana, Nayra, Patrick">
+  <meta http-equiv="Content-Language" content="pt-BR">
+  <meta property="og:title" content="Geek Byte">
+  <meta property="og:description" content="Geek Byte a lanchonete do geek!!">
+  <meta property="og:url" content="www.geekbyte.com.br">
+  <meta property="og:phone_number" content="(11) 2609-3807">
+  <meta property="og:street-address" content=" Av. Brig. Faria Lima, 1306">
+  <meta property="og:locality" content="Pinheiros">
+  <meta property="og:region" content="SP">
+  <meta property="og:email" content="ada@adatechbyifood.com.br">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.geekbyte.com.br/dist/img/logo.webp">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../dist/styles.min.css">
+  <link rel="stylesheet" href="../styles/bootstrap.css">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <title>Geek Byte - Carrinho</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-container">
+      <div class="header-logo">
+        <img src="../../dist/img/logo.png" alt="Logo da Loja" width="200px" height="80px" /><span>GeekByte</span>
+      </div>
+      <nav class="header-navbar">
+        <a class="nav-item" href="../../index.html">
+          <div class="blur"></div>
+          Home
         </a>
+        <a class="nav-item" href="cardapio.html">
+          <div class="blur"></div>
+          Cardápio
+        </a>
+        <a class="nav-item" href="reserve.html">
+          <div class="blur"></div>
+          Reserva
+        </a>
+      </nav>
+      <a class="header-cart" href="cart.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart"
+          viewBox="0 0 16 16" alt="minicart">
+          <path
+            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>Carrinho
+      </a>
       <div class="header-account">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" alt="login e registro"
           xmlns="http://www.w3.org/2000/svg">
@@ -77,75 +68,100 @@
       </div>
     </div>
   </header>
-
   <main>
-    <div class="container-reserve">
-      <div class="image-container">
-        <img src="../images/batata-reserve.webp" alt="Batat Frita" style="width: 100%" />
+    <div class="cart-container">
+      <div class="carrinho-message">
+        <h1 class="cart-h1">Carrinho de Compras - Geek Byte</h1>
       </div>
-      <form action="" class="form-reserve">
-        <div class="title-reserve">
-          <h1>Faça sua Reserva</h1>
-        </div>
-
-
-
-        <ul>
-          <li class="input-reserve">
-            <!--CAMPO NOME-->
-            <label for="client_name" class="label-reserve">Nome:</label>
-            <input type="text" name="client_name" id="client_name" pattern=".{6,}" required
-              oninvalid="this.setCustomValidity('Nome deve conter 6 ou mais caracteres')" />
-          </li>
-
-          <li class="input-reserve">
-            <!--CAMPO E-MAIL-->
-            <label for="client_email" class="label-reserve">E-mail:</label>
-            <input type="email" id="client_email" name="client_email" />
-          </li>
-
-          <li class="input-reserve">
-            <!--CAMPO CELULAR  -->
-            <label for="client_phone" class="label-reserve">Celular:</label>
-            <input type="tel" id="client_phone" name="client_phone" required />
-          </li>
-
-          <li class="input-reserve">
-            <!--CAMPO DIA DA RESERVA -->
-            <label for="date_reserve" class="label-reserve">Data:</label>
-            <input type="date" id="date_reserve" name="date_reserve" required />
-          </li>
-
-          <li class="input-reserve">
-            <!--CAMPO HORARIO DA RESERVA  -->
-            <label for="time_reserve" class="label-reserve">Horário:</label>
-            <input type="time" id="time_reserve" name="time_reserve" min="12:00" max="23:00" required />
-          </li>
-
-          <li class="input-reserve">
-            <!--CAMPO CONVIDADOS  -->
-            <label for="guests" class="label-reserve">Convidados:</label>
-            <select id="guests" name="guests" required>
-              <option value="one_people">1 Convidado</option>
-              <option value="two_people">2 Convidados</option>
-              <option value="three_people">3 Convidados</option>
-              <option value="four_people">4 Convidados</option>
-              <option value="five_people">5 Convidados</option>
-              <option value="more_people">Mais Pessoas</option>
-            </select>
-          </li>
-        </ul>
-
-        <button type="submit" class="button-reserve">Confirmar</button>
-      </form>
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col" class="d-none d-sm-table-cell">Item</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Imagem</th>
+            <th scope="col" class="d-none d-sm-table-cell">Preço</th>
+            <th scope="col" class="d-none d-sm-table-cell">Quantidade</th>
+            <th scope="col">Total</th>
+            <th scope="col">Remover</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="d-none d-sm-table-cell">1</th>
+            <td>Hambúrguer de Frango</td>
+            <td>
+              <img src="../images/hamburguer-frango.png" alt="Hambúrguer de Frango" class="produto-image img-fluid" />
+            </td>
+            <td class="d-none d-sm-table-cell">R$ 12.99</td>
+            <td class="d-none d-sm-table-cell">2</td>
+            <td>R$ 25.98</td>
+          </tr>
+          <tr>
+            <th scope="row" class="d-none d-sm-table-cell">2</th>
+            <td>Pizza de Pepperoni</td>
+            <td>
+              <img src="../images/pizza-pepperoni.png" alt="Pizza de Pepperoni" class="produto-image img-fluid" />
+            </td>
+            <td class="d-none d-sm-table-cell">R$ 15.99</td>
+            <td class="d-none d-sm-table-cell">1</td>
+            <td>R$ 15.99</td>
+          </tr>
+          <tr>
+            <th scope="row" class="d-none d-sm-table-cell">3</th>
+            <td>Coca-cola</td>
+            <td>
+              <img src="../images/coca-cola-lata.png" alt="Refrigerenta lata 350ml" class="produto-image img-fluid" />
+            </td>
+            <td class="d-none d-sm-table-cell">R$ 07.00</td>
+            <td class="d-none d-sm-table-cell">1</td>
+            <td>R$ 07.00</td>
+          </tr>
+          <tr>
+            <th scope="row" class="d-none d-sm-table-cell">4</th>
+            <td>Coca-cola</td>
+            <td>
+              <img src="../images/coca-cola-garrafa.png" alt="Refrigerante garrafa 2 litros"
+                class="produto-image img-fluid" />
+            </td>
+            <td class="d-none d-sm-table-cell">R$ 12.99</td>
+            <td class="d-none d-sm-table-cell">1</td>
+            <td>R$ 12.99</td>
+          </tr>
+          <tr>
+            <th scope="row" class="d-none d-sm-table-cell">5</th>
+            <td>Sprite</td>
+            <td>
+              <img src="../images/sprite-garrafa.png" alt="Refrigerante garrafa 2 litros"
+                class="produto-image img-fluid" />
+            </td>
+            <td class="d-none d-sm-table-cell">R$ 10.00</td>
+            <td class="d-none d-sm-table-cell">1</td>
+            <td>R$ 10.00</td>
+          </tr>
+          <tr>
+            <th scope="row" class="d-none d-sm-table-cell">6</th>
+            <td>Sprite</td>
+            <td>
+              <img src="../images/sprite-lata.png" alt="Refrigerante garrafa 2 litros"
+                class="produto-image img-fluid" />
+            </td>
+            <td class="d-none d-sm-table-cell">R$ 6.00</td>
+            <td class="d-none d-sm-table-cell">1</td>
+            <td>R$ 6.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="mb-3">
+        <h3 id="cart-total">Total: R$ 77.96</h3>
+      </div>
+      <a href="payment.html" class="geekbyte btn btn-primary">Finalizar</a>
+      <a href="cardapio.html" class="geekbyte btn btn-primary">Continuar</a>
     </div>
   </main>
-
   <footer class="footer">
     <div class="footer-info">
       <span class="info-title">Informações</span>
-      <span class="info-item">Av. Brig. Faria Lima, 1306 - Pinheiros, São Paulo - SP,
-        01451-001</span>
+      <span class="info-item">Av. Brig. Faria Lima, 1306 - Pinheiros, São Paulo - SP, 01451-001</span>
       <span class="info-item">Seg à Sex das 19:00 às 00:00</span>
       <a href="" class="info-item contact">
         <svg class="header-contact-info--icon" width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -156,14 +172,14 @@
         </svg>
         <span class="info-item contact-item">(11) 2609-3807</span>
       </a>
+
     </div>
     <div class="footer-maps">
       <div class="mapouter">
-        <div class="gmap_canvas">
-          <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        <div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0"
+            marginwidth="0"
             src="https://maps.google.com/maps?width=260&amp;height=260&amp;hl=en&amp;q=ada tech&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
-            href="https://connectionsgame.org/">Connections NYT</a>
-        </div>
+            href="https://connectionsgame.org/">Connections NYT</a></div>
         <style>
           .mapouter {
             position: relative;
@@ -230,8 +246,55 @@
       <span class="copy-item">Patrick</span>
     </div>
   </footer>
+  <script src="../../dist/script.min.js"></script>
+  <script>
+    if (localStorage.getItem('carrinho')) {
+      var carrinhoString = localStorage.getItem('carrinho');
+      var carrinho = JSON.parse(carrinhoString);
 
-  <script src="../js/reserve.js"></script>
+      var tabela = document.querySelector('tbody');
+      tabela.innerHTML = '';
+
+      var total = 0;
+
+      carrinho.forEach(function (produto, index) {
+        var subtotal = produto.price * produto.quantity;
+        total += subtotal;
+
+        var linha = document.createElement('tr');
+        linha.innerHTML = `
+        <th scope="row" class="d-none d-sm-table-cell">${index + 1}</th>
+        <td>${produto.title}</td>
+        <td>
+          <img src="${produto.image}" alt="${produto.title}" class="produto-image img-fluid" />
+        </td>
+        <td class="d-none d-sm-table-cell">${produto.price.toFixed(2)}</td>
+        <td class="d-none d-sm-table-cell">${produto.quantity}</td>
+        <td>${subtotal.toFixed(2)}</td>
+        <td><button onclick="removerItem(${index})" class="btn btn-danger">-</button></td>
+      `;
+
+        tabela.appendChild(linha);
+      });
+
+      document.getElementById('cart-total').innerText = 'Total: R$ ' + total.toFixed(2);
+    }
+
+    function removerItem(index) {
+      if (localStorage.getItem('carrinho')) {
+        var carrinhoString = localStorage.getItem('carrinho');
+        var carrinho = JSON.parse(carrinhoString);
+        if (carrinho[index].quantity > 1) {
+          carrinho[index].quantity -= 1;
+        } else {
+          carrinho.splice(index, 1);
+        }
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        location.reload();
+        console.log(`Item "${carrinho[index].title}" modificado no carrinho.`);
+      }
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>

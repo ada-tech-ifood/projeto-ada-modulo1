@@ -12,5 +12,5 @@ if (!!feed){
                     feed.classList.add('show');
                 },
             },
-        });
+        }); 
     }
